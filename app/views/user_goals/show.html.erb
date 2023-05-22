@@ -1,0 +1,191 @@
+<div>
+  <div>
+    <h1>
+      User goal #<%= @the_user_goal.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/user_goals">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_user_goal/<%= @the_user_goal.id %>">
+          Delete user goal
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Objective
+      </dt>
+      <dd>
+        <%= @the_user_goal.objective %>
+      </dd>
+
+      <dt>
+        Weight
+      </dt>
+      <dd>
+        <%= @the_user_goal.weight %>
+      </dd>
+
+      <dt>
+        In
+      </dt>
+      <dd>
+        <%= @the_user_goal.in %>
+      </dd>
+
+      <dt>
+        Kg
+      </dt>
+      <dd>
+        <%= @the_user_goal.kg %>
+      </dd>
+
+      <dt>
+        Height
+      </dt>
+      <dd>
+        <%= @the_user_goal.height %>
+      </dd>
+
+      <dt>
+        In
+      </dt>
+      <dd>
+        <%= @the_user_goal.in %>
+      </dd>
+
+      <dt>
+        Cm
+      </dt>
+      <dd>
+        <%= @the_user_goal.cm %>
+      </dd>
+
+      <dt>
+        Age
+      </dt>
+      <dd>
+        <%= @the_user_goal.age %>
+      </dd>
+
+      <dt>
+        Gender
+      </dt>
+      <dd>
+        <%= @the_user_goal.gender %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_user_goal.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_user_goal.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit user goal
+    </h2>
+
+    <form action="/modify_user_goal/<%= @the_user_goal.id %>"  method="post" >
+      <div>
+        <label for="objective_box">
+          Objective
+        </label>
+
+        <textarea id="objective_box" name="query_objective"><%= @the_user_goal.objective %></textarea>
+      </div>
+
+      <div>
+        <label for="weight_box">
+          Weight
+        </label>
+
+        <input type="text" id="weight_box" name="query_weight" value="<%= @the_user_goal.weight %>">
+      </div>
+
+      <div>
+        <label for="in_box">
+          In
+        </label>
+
+        <input type="text" id="in_box" name="query_in" value="<%= @the_user_goal.in %>">
+      </div>
+
+      <div>
+        <label for="kg_box">
+          Kg
+        </label>
+
+        <input type="text" id="kg_box" name="query_kg" value="<%= @the_user_goal.kg %>">
+      </div>
+
+      <div>
+        <label for="height_box">
+          Height
+        </label>
+
+        <input type="text" id="height_box" name="query_height" value="<%= @the_user_goal.height %>">
+      </div>
+
+      <div>
+        <label for="in_box">
+          In
+        </label>
+
+        <input type="text" id="in_box" name="query_in" value="<%= @the_user_goal.in %>">
+      </div>
+
+      <div>
+        <label for="cm_box">
+          Cm
+        </label>
+
+        <input type="text" id="cm_box" name="query_cm" value="<%= @the_user_goal.cm %>">
+      </div>
+
+      <div>
+        <label for="age_box">
+          Age
+        </label>
+
+        <input type="text" id="age_box" name="query_age" value="<%= @the_user_goal.age %>">
+      </div>
+
+      <div>
+        <label for="gender_box">
+          Gender
+        </label>
+
+        <textarea id="gender_box" name="query_gender"><%= @the_user_goal.gender %></textarea>
+      </div>
+
+      <button>
+        Update user goal
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

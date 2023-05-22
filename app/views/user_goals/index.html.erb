@@ -1,0 +1,214 @@
+<div>
+  <div>
+    <h1>
+      List of all user goals
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new user goal
+    </h2>
+
+    <form action="/insert_user_goal" method="post">
+      <div>
+        <label for="objective_box">
+          Objective
+        </label>
+
+        <textarea id="objective_box" name="query_objective" rows="3"></textarea>
+      </div>
+
+      <div>
+        <label for="weight_box">
+          Weight
+        </label>
+
+        <input type="text" id="weight_box" name="query_weight">
+      </div>
+
+      <div>
+        <label for="in_box">
+          In
+        </label>
+
+        <input type="text" id="in_box" name="query_in">
+      </div>
+
+      <div>
+        <label for="kg_box">
+          Kg
+        </label>
+
+        <input type="text" id="kg_box" name="query_kg">
+      </div>
+
+      <div>
+        <label for="height_box">
+          Height
+        </label>
+
+        <input type="text" id="height_box" name="query_height">
+      </div>
+
+      <div>
+        <label for="in_box">
+          In
+        </label>
+
+        <input type="text" id="in_box" name="query_in">
+      </div>
+
+      <div>
+        <label for="cm_box">
+          Cm
+        </label>
+
+        <input type="text" id="cm_box" name="query_cm">
+      </div>
+
+      <div>
+        <label for="age_box">
+          Age
+        </label>
+
+        <input type="text" id="age_box" name="query_age">
+      </div>
+
+      <div>
+        <label for="gender_box">
+          Gender
+        </label>
+
+        <textarea id="gender_box" name="query_gender" rows="3"></textarea>
+      </div>
+
+      <button>
+        Create user goal
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Objective
+        </th>
+
+        <th>
+          Weight
+        </th>
+
+        <th>
+          In
+        </th>
+
+        <th>
+          Kg
+        </th>
+
+        <th>
+          Height
+        </th>
+
+        <th>
+          In
+        </th>
+
+        <th>
+          Cm
+        </th>
+
+        <th>
+          Age
+        </th>
+
+        <th>
+          Gender
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_user_goals.each do |a_user_goal| %>
+      <tr>
+        <td>
+          <%= a_user_goal.id %>
+        </td>
+
+        <td>
+          <%= a_user_goal.objective %>
+        </td>
+
+        <td>
+          <%= a_user_goal.weight %>
+        </td>
+
+        <td>
+          <%= a_user_goal.in %>
+        </td>
+
+        <td>
+          <%= a_user_goal.kg %>
+        </td>
+
+        <td>
+          <%= a_user_goal.height %>
+        </td>
+
+        <td>
+          <%= a_user_goal.in %>
+        </td>
+
+        <td>
+          <%= a_user_goal.cm %>
+        </td>
+
+        <td>
+          <%= a_user_goal.age %>
+        </td>
+
+        <td>
+          <%= a_user_goal.gender %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_user_goal.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_user_goal.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/user_goals/<%= a_user_goal.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

@@ -1,6 +1,27 @@
 Rails.application.routes.draw do
 
+  
+  # Routes for the User goal resource:
+
+  # CREATE
+  post("/insert_user_goal", { :controller => "user_goals", :action => "create" })
+          
+  # READ
+  get("/user_goals", { :controller => "user_goals", :action => "index" })
+  
+  get("/user_goals/:path_id", { :controller => "user_goals", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_user_goal/:path_id", { :controller => "user_goals", :action => "update" })
+  
+  # DELETE
+  get("/delete_user_goal/:path_id", { :controller => "user_goals", :action => "destroy" })
+
+  #------------------------------
+
   get("/", { :controller => "user_authentication", :action => "sign_up_form" })
+  get("/your_goals", { :controller => "setup", :action => "initial_goals"})
 
   # Routes for the User account:
 
