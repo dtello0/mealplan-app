@@ -13,12 +13,17 @@
 ActiveRecord::Schema.define(version: 2023_05_22_232330) do
 
   create_table "user_goals", force: :cascade do |t|
-    t.text "user"
+    t.text "user_id"
     t.text "objective"
-    t.string "weight_in_kg"
-    t.string "height_in_cm"
-    t.string "age"
+    t.decimal "weight_in_kg"
+    t.decimal "height_in_cm"
+    t.decimal "age"
     t.text "gender"
+    t.decimal "bmr"
+    t.decimal "calorie_objective"
+    t.decimal "protein_objective"
+    t.decimal "carbs_objective"
+    t.decimal "fat_objective"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
