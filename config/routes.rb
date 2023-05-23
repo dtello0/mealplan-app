@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get("/your_goals", { :controller => "setup", :action => "initial_goals"})
   get("/calculate_calories_form", { :controller => "setup", :action => "calculate_calories" })
   post("/calculate_calories", { :controller => "setup", :action => "calculate_calories"})
+  get("/home", { :controller => "mealplan", :action => "homepage"})
 
   # Routes for the User account:
 

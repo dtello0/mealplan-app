@@ -17,3 +17,9 @@ class CreateUserGoals < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+class ChangeUserGoalsUserIdDataType < ActiveRecord::Migration[6.0]
+  def change
+    change_column :user_goals, :user_id, :integer
+  end
+end

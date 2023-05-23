@@ -18,4 +18,5 @@
 #  user_id           :text
 #
 class UserGoal < ApplicationRecord
+  belongs_to :user
 end

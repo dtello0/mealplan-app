@@ -65,8 +65,101 @@ button:hover {
   background-color: #555555;
 }
 
-.font {
+.body {
   font-family: 'Roboto', sans-serif;
 }
 
+.banner {
+  flex: 1 1 100%;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
 
+.goal-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.goal-info p {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.banner h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: #ddd;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 5px;
+}
+
+.main-body {
+  flex: 1;
+  padding: 20px;
+}
+
+.main-body h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.meal-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.meal-list li {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.meal-list input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.meal-list label {
+  display: flex;
+  align-items: center;
+}
+
+.info-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  flex: 0 0 20%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  font-family: 'Roboto', sans-serif;
+}
