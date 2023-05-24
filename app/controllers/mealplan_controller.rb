@@ -16,10 +16,10 @@ class MealplanController < ApplicationController
 
     api_messages_array = [
       { role: "system", content: "You are a meal planning assistant." },
-      { role: "user", content: "Please provide a meal plan for Breakfast, First snack, Lunch, Second snack, and Dinner, based on the following objectives: Protein: #{protein_objective} g Carbs: #{carbs_objective} g Fat: #{fat_objective} g" }
+      { role: "user", content: "Please provide a meal plan in JSON format with the struture meal, food_item, ingredients, macros, for Breakfast, First snack, Lunch, Second snack, and Dinner, based on the following objectives: Protein: #{protein_objective} g Carbs: #{carbs_objective} g Fat: #{fat_objective} g" }
     ]
    
-    client = OpenAI::Client.new(access_token: ENV.fetch("GPT_TOKEN"))
+    client = OpenAI::Client.new(access_token: ENV.fetch("GPT_TOKEN"), request_timeout: 240)
     
     response = client.chat(
       parameters: {

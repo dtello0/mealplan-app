@@ -33,22 +33,29 @@
     <a href="/generate_mealplan">Create plan for today</a>
     <% @meal_plan %>
     <ul class="meal-list">
+      
+      <% @meals = JSON.parse(@the_mealplan.content).keys.first(5) %>
+
+      <% @meals.each do |key| %>
+      
       <li>
-        <input type="checkbox" id="meal-1">
-        <label for="meal-1"><%= @the_mealplan.content %></label>
+      <%= key %>
       </li>
-      <li>
-        <input type="checkbox" id="meal-2">
-        <label for="meal-2">Lunch</label>
-      </li>
-      <li>
-        <input type="checkbox" id="meal-3">
-        <label for="meal-3">Dinner</label>
-      </li>
-      <li>
-        <input type="checkbox" id="meal-4">
-        <label for="meal-4">Snack</label>
-      </li>
+
+        <%= food_item = JSON.parse(@the_mealplan.content).fetch(key).fetch("food_item") %>
+        <% ingredients = JSON.parse(@the_mealplan.content).fetch(key).fetch("ingredients") %>
+
+        <% ingredients.each do |ingredient| %>
+      
+          <li>
+            <input type="checkbox" id="ingredient-<%= ingredient %>">
+            <label for="ingredient-<%= ingredient %>"><%= ingredient %></label>
+          </li>
+
+        <% end %>
+      
+      <% end %>
+
     </ul>
   </div>
 </div>
