@@ -14,6 +14,8 @@ class MealplansController < ApplicationController
 
     @the_mealplan = matching_mealplans.at(0)
 
+    @user_last_goal = UserGoal.where(user_id: session[:user_id]).order(submitted_at: :desc).first
+
     render({ :template => "mealplans/show.html.erb" })
   end
 

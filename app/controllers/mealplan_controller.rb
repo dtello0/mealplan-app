@@ -37,8 +37,7 @@ class MealplanController < ApplicationController
 
     if @meal_plan.save
       @meal_plan.save
-      render({ :template => "mealplans/random.html.erb"})
-      #redirect_to("/home", { :notice => "Meal plan created successfully." })
+      redirect_to("/mealplans/#{@meal_plan.id}", { :notice => "Meal plan created successfully." })
     else
       redirect_to("/home", { :alert => meal_plan.errors.full_messages.to_sentence })
     end

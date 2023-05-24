@@ -1,54 +1,58 @@
-<div>
-  <div>
-    <h1>
-      Mealplan #<%= @the_mealplan.id %> details
-    </h1>
-
-    <div>
-      <div>
-        <a href="/mealplans">
-          Go back
-        </a>
+<div class="container2">
+  <div class="banner">
+    <h1>Welcome to Your Fitness Journey</h1>
+    <div class="info-box">
+      <div class="info-item">
+        <p>Weight: <%= @user_last_goal.weight_in_kg %> kg</p>
       </div>
-
-      <div>
-        <a href="/delete_mealplan/<%= @the_mealplan.id %>">
-          Delete mealplan
-        </a>
+      <div class="info-item">
+        <p>Calorie Objective: <%= @user_last_goal.calorie_objective %></p>
+      </div>
+      <div class="info-item">
+        <p>Protein Objective: <%= @user_last_goal.protein_objective %> g</p>
+      </div>
+      <div class="info-item">
+        <p>Carbs Objective: <%= @user_last_goal.carbs_objective %> g</p>
+      </div>
+      <div class="info-item">
+        <p>Fat Objective: <%= @user_last_goal.fat_objective %> g</p>
       </div>
     </div>
-
-    <dl>
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_mealplan.user_id %>
-      </dd>
-
-      <dt>
-        Content
-      </dt>
-      <dd>
-        <%= @the_mealplan.content %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_mealplan.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_mealplan.updated_at) %> ago
-      </dd>
-    </dl>
+  </div>
+  
+  <div class="sidebar">
+    <h2>Views</h2>
+    <ul>
+      <li><a href="#">Meal Plan</a></li>
+      <li><a href="#">Shopping List</a></li>
+    </ul>
+  </div>
+  
+  <div class="main-body">
+    <h2>Meal Plan for Today</h2>
+    <a href="/generate_mealplan">Create plan for today</a>
+    <% @meal_plan %>
+    <ul class="meal-list">
+      <li>
+        <input type="checkbox" id="meal-1">
+        <label for="meal-1"><%= @the_mealplan.content %></label>
+      </li>
+      <li>
+        <input type="checkbox" id="meal-2">
+        <label for="meal-2">Lunch</label>
+      </li>
+      <li>
+        <input type="checkbox" id="meal-3">
+        <label for="meal-3">Dinner</label>
+      </li>
+      <li>
+        <input type="checkbox" id="meal-4">
+        <label for="meal-4">Snack</label>
+      </li>
+    </ul>
   </div>
 </div>
+
 
 <hr>
 

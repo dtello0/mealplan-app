@@ -15,5 +15,5 @@ class User < ApplicationRecord
   validates :email, :presence => true
   has_secure_password
   has_many :user_goal
-  has_many :mealplan
+  has_many :mealplans
 end
