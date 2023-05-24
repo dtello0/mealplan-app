@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Mealplan #<%= @the_mealplan.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/mealplans">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_mealplan/<%= @the_mealplan.id %>">
+          Delete mealplan
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_mealplan.user_id %>
+      </dd>
+
+      <dt>
+        Content
+      </dt>
+      <dd>
+        <%= @the_mealplan.content %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_mealplan.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_mealplan.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit mealplan
+    </h2>
+
+    <form action="/modify_mealplan/<%= @the_mealplan.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_mealplan.user_id %>">
+      </div>
+
+      <div>
+        <label for="content_box">
+          Content
+        </label>
+
+        <input type="text" id="content_box" name="query_content" value="<%= @the_mealplan.content %>">
+      </div>
+
+      <button>
+        Update mealplan
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_22_232330) do
+ActiveRecord::Schema.define(version: 2023_05_23_193359) do
+
+  create_table "mealplans", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "user_goals", force: :cascade do |t|
     t.text "user_id"

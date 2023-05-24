@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
 
   
+  # Routes for the Mealplan resource:
+
+  # CREATE
+  post("/insert_mealplan", { :controller => "mealplans", :action => "create" })
+          
+  # READ
+  get("/mealplans", { :controller => "mealplans", :action => "index" })
+  
+  get("/mealplans/:path_id", { :controller => "mealplans", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_mealplan/:path_id", { :controller => "mealplans", :action => "update" })
+  
+  # DELETE
+  get("/delete_mealplan/:path_id", { :controller => "mealplans", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User goal resource:
 
   # CREATE
@@ -25,7 +44,8 @@ Rails.application.routes.draw do
   get("/calculate_calories_form", { :controller => "setup", :action => "calculate_calories" })
   post("/calculate_calories", { :controller => "setup", :action => "calculate_calories"})
   get("/home", { :controller => "mealplan", :action => "homepage"})
-
+  get("/generate_mealplan", { :controller => "mealplan", :action => "new_mealplan"})
+  
   # Routes for the User account:
 
   # SIGN UP FORM
