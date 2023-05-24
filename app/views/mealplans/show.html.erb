@@ -43,9 +43,9 @@
 
       <% @meals.each do |key| %>
       
-      <li>
-      <%= key %>
-      </li>
+        <li>
+          <%= key %>
+        </li>
 
         <%= food_item = JSON.parse(@the_mealplan.content).fetch(key).fetch("food_item") %>
         <% ingredients = JSON.parse(@the_mealplan.content).fetch(key).fetch("ingredients") %>
