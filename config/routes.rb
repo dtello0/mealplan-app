@@ -39,11 +39,12 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  get("/", { :controller => "user_authentication", :action => "sign_up_form" })
+  get("/", { :controller => "application", :action => "home" })
   get("/your_goals", { :controller => "setup", :action => "initial_goals"})
   get("/calculate_calories_form", { :controller => "setup", :action => "calculate_calories" })
+  post("/calculate_calories_form", { :controller => "setup", :action => "calculate_calories"})
   post("/calculate_calories", { :controller => "setup", :action => "calculate_calories"})
-  get("/home", { :controller => "mealplan", :action => "homepage"})
+  get("/welcome", { :controller => "mealplan", :action => "welcome"})
   get("/generate_mealplan", { :controller => "mealplan", :action => "new_mealplan"})
   
   # Routes for the User account:

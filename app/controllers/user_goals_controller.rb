@@ -1,4 +1,6 @@
 class UserGoalsController < ApplicationController
+  before_action(:force_user_sign_in)
+
   def index
     matching_user_goals = UserGoal.all
 

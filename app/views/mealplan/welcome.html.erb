@@ -30,37 +30,11 @@
   <div class="main-body">
 
     <div class = "button3-container">
-    <a href="/mealplans/#{lastplan}" class="button3">Show last meal plan</a>
+    <% if Mealplan.where({ :user_id => session[:user_id] }).at(0) != nil %>
+    <a href="/mealplans/<%= Mealplan.where({ :user_id => session[:user_id] }).order(id: :desc).first.id %>" class="button3">Show last meal plan</a>
+    <% end %>
     <a href="/generate_mealplan" class="button3">Create plan for today</a>
-    </div> 
+    </div>
 
-    <h2>Meal Plan</h2>
-    
-    <% @meal_plan %>
-    <ul class="meal-list">
-      
-      <% @meals = JSON.parse(@the_mealplan.content).keys.first(5) %>
-
-      <% @meals.each do |key| %>
-      
-      <li>
-      <%= key %>
-      </li>
-
-        <%= food_item = JSON.parse(@the_mealplan.content).fetch(key).fetch("food_item") %>
-        <% ingredients = JSON.parse(@the_mealplan.content).fetch(key).fetch("ingredients") %>
-
-        <% ingredients.each do |ingredient| %>
-      
-          <li>
-            <input type="checkbox" id="ingredient-<%= ingredient %>">
-            <label for="ingredient-<%= ingredient %>"><%= ingredient %></label>
-          </li>
-
-        <% end %>
-      
-      <% end %>
-
-    </ul>
   </div>
 </div>

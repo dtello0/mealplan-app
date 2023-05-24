@@ -1,8 +1,10 @@
 class MealplanController < ApplicationController
 
-  def homepage
+  before_action(:force_user_sign_in)
+  
+  def welcome
     @user_last_goal = UserGoal.where(user_id: session[:user_id]).order(submitted_at: :desc).first
-    render({ :template => "mealplan/homepage.html.erb"})
+    render({ :template => "mealplan/welcome.html.erb"})
   end
 
   def new_mealplan

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Base Rails</title>
+    <title>FoodCoach</title>
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -17,11 +17,21 @@
 
   <body>
 
+    <nav>
+
+      <% if session[:user_id].present? %>
+      <ul>
+        <a href="/user_sign_out">Sign out</a>
+      </ul>
+      <% end %>
+
     <% if notice %>
       <div class="notice">
         <%= notice %>
       </div>
     <% end %>
+
+    </nav>
 
     <%= yield %>
   </body>
